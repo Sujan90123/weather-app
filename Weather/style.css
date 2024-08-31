@@ -10,16 +10,21 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: seagreen;
+    background: url('./images/space.jpg') ;
+    background-size: cover;
+    background-position: center;
 }
 
 .container {
     position: relative;
     width: 400px;
     height: 400px;
-    background-color: purple;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border:2px solid  rgba(83, 68, 68, 0.2) ;
     border-radius: 50%;
     padding: 70px;
+    color: #fff;
 }
 
 .search-box {
@@ -65,4 +70,114 @@ body {
     color: #fff;
     padding: 0 48px 0 5px;
     cursor: pointer;
+}
+.weather-box{
+    text-align: center;
+    margin: 10px 0;
+}
+.weather-box,.weather-details,.not-found{
+    visibility: hidden;
+}
+.weather-box.active,.weather-details.active,.not-found.active{
+    visibility: visible;
+}
+.weather-box img{
+    width: 50%;
+}
+.weather-box .temperature{
+    position: relative;
+    font-size: 50px;
+    line-height: 1;
+    font-weight: 600;
+    margin: 5px 0 6px -20px;
+}
+.weather-box .temperature span{
+    position: absolute;
+    font-size: 20px;
+    margin-left: 4px;
+}
+.weather-box .description{
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+.weather-details{
+    position: absolute;
+    bottom: 40px;
+    left:0;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+
+}
+.weather-details .humidity,
+.weather-details .wind {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.weather-details .humidity {
+    padding-left: 20px;
+    justify-content: flex-start;
+    text-align: left;
+    margin-left: -10px;
+}
+
+.weather-details .wind {
+    padding-right: 20px;
+    justify-content: flex-end;
+    text-align: right;
+    margin-right: px;
+}
+
+.weather-details i {
+    margin-top: -200px; 
+    font-size: 56px;
+}
+
+.weather-details .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: -200px;
+}
+
+.weather-details .wind .text {
+    align-items: flex-end; 
+    margin-right: -40px;
+}
+
+.weather-details span {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.weather-details p {
+    font-size: 14px;
+    font-weight: 500;
+}
+.not-found{
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    margin-top: 150px;
+
+
+}
+.not-found img{
+    width: 60%;
+}
+.not-found p{
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 12px;
+
+}
+.city-hide{
+    display: none;
 }
